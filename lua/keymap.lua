@@ -1,6 +1,13 @@
 local G = require('G')
 
+G.g.mapleader = " "
 G.map({
+    -- 移动光标快捷键
+    { 'i', 'jj',          '<Esc>l', { noremap = true, silent = true } },
+    { 'v', 'N',           '<Esc>',  { noremap = true, silent = true } },
+    { 'n', 'J',           '3j',     { noremap = true, silent = true } },
+    { 'n', 'K',           '3k',     { noremap = true, silent = true } },
+
     -- 设置s t 无效 ;=: ,重复上一次宏操作
     { 'n', 's',           '<nop>',            {} },
     { 'n', ';',           ':',                {} },
@@ -138,7 +145,7 @@ G.map({
     { 'v', '-',           'zf',                                               { noremap = true, silent = true } },
 
     -- space 行首行尾跳转
-    { 'n', '<space>',     ':call v:lua.MagicMove()<cr>',                      { noremap = true, silent = true } },
+    { 'n', ',',     ':call v:lua.MagicMove()<cr>',                      { noremap = true, silent = true } },
     { 'n', '0',           '%',                                                { noremap = true } },
     { 'v', '0',           '%',                                                { noremap = true } },
 
